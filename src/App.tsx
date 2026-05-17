@@ -42,7 +42,7 @@ function App() {
         });
 
         // Load Python logic from file and execute it in Pyodide
-        const logicResponse = await fetch('/logic.py');
+        const logicResponse = await fetch(`${import.meta.env.BASE_URL}logic.py`);
         if (!logicResponse.ok) {
           throw new Error('Failed to load logic.py');
         }
